@@ -10,6 +10,12 @@ public class CharacterUpdater : MonoBehaviour
     }
     public void UpdateSpeed(){
         animator.SetFloat("Speed", slider.value);
-        Debug.Log("Slider value is " +  slider.value);
+    }
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetTrigger("Jump");
+        }
     }
 }
